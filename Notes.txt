@@ -1,0 +1,14 @@
+# Run this command with admin rights on user device
+C:\Windows\CCMSetup\ccmsetup.exe /mp:SS-JUB-SCCM-MP1.sabiccorp.sabic.com SMSSITECODE=A01 /UsePKICert /forceinstall /BITSPriority:HIGH
+
+# MSU file
+wusa.exe KBxxxxxx.msu /quiet /norestart
+
+# MSP File
+msiexec /p msipatchname.msp /qn
+
+msiexec /update adobe.msp /qn /norestart
+msiexec /update AcrobatDCUpd2500120474.msp /qn /norestart
+
+# Powershell execution policy
+Powershell.exe -ExecutionPolicy Bypass -File
